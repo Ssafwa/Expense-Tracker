@@ -21,4 +21,4 @@ CSS3: Styling, responsive design, and animations (including FontAwesome for icon
 JavaScript (ES6+): Core logic, DOM manipulation, transaction processing, and modal management.
 
 
-demo-link = 
+demo-link = https://expense-tracker-pink-xi-60.vercel.app/
