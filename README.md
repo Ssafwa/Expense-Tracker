@@ -6,7 +6,7 @@ A simple website to track your expenses and understand where your money is going
 )
 
 -----------
-project link = https://expense-tracker-pink-xi-60.vercel.app/
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://expense-tracker-pink-xi-60.vercel.app/)
 ------------
 
 ##  Features
@@ -30,6 +30,6 @@ __________________
 ```bash
       git clone https://github.com/Ssafwa/Expense-Tracker.git
 ```
-------------------------------------------------------------------------________________________------NOTE-----____________________--------------------------------------------------------------------------------
+------------------------------------------------------------------------NOTE-----------
 This project currently only includes the **front-end**. Backend/database integration is planned.  
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
