@@ -24,9 +24,9 @@
 
         <div class="header-controls">
 
-            <div class="dropdown">Daily <i class="fas fa-chevron-down"></i></div>
+           
 
-            <div class="data-picker"><i class="fas fa-calendar-alt"></i> 11 Mar 2087</div>
+            <div class="data-picker"><i class="fas fa-calendar-alt"></i> <span id="dateText"></span></div>
 
             <div class="export-btn" onclick="exportPDF()"><i class="fas fa-file-download"></i> Export</div>
 
@@ -141,9 +141,7 @@
 
                     <div style="display: flex; gap: 1rem;">
 
-                        <div class="dropdown">Yearly <i class="fas fa-chevron-down"></i></div>
-
-                        <button class="filter-btn"><i class="fas fa-filter"></i> Filter</button>
+                        
 
                     </div>
 
@@ -311,10 +309,6 @@
                 <h3 class="card-title">Recent Transactions</h3>
 
                 <div class="filters">
-
-                    <button class="filter-btn"><i class="fas fa-sort"></i> Sort</button>
-
-                    <button class="filter-btn"><i class="fas fa-filter"></i> Filter</button>
 
                 </div>
 
