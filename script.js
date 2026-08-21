@@ -198,29 +198,28 @@ function exportPDF() {
     const redCol = [239, 68, 68];
     const white = [255, 255, 255];
 
-    // ── COVER BACKGROUND ──
+   
     doc.setFillColor(...bgDark);
     doc.rect(0, 0, W, 297, 'F');
 
-    // ── HEADER GOLD BAR ──
+   
     doc.setFillColor(...bgCard);
     doc.rect(0, 0, W, 52, 'F');
 
-    // Gold accent line
+    
     doc.setDrawColor(...gold);
     doc.setLineWidth(0.5);
     doc.line(0, 52, W, 52);
 
-    // Decorative gold corner squares
-    doc.setFillColor(...gold);
+    
     doc.rect(0, 0, 3, 3, 'F');
     doc.rect(W - 3, 0, 3, 3, 'F');
 
-    // Left gold bar accent
+   
     doc.setFillColor(...goldDim);
     doc.rect(0, 0, 1.5, 52, 'F');
 
-    // ── LOGO / TITLE ──
+  
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(22);
     doc.setTextColor(...goldLight);
@@ -231,12 +230,12 @@ function exportPDF() {
     doc.setTextColor(...textMuted);
     doc.text('FINANCIAL REPORT', 14, 29);
 
-    // Gold diamond icon (◈) before title
+    
     doc.setFontSize(16);
     doc.setTextColor(...gold);
     doc.text('◈', 37, 22);
 
-    // ── DATE INFO (right side of header) ──
+  
     const now = new Date();
     const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
@@ -286,33 +285,29 @@ function exportPDF() {
     cards.forEach((card, i) => {
         const x = cardStartX + i * (cardW + cardGap);
 
-        // Card bg
         doc.setFillColor(...bgCard);
         doc.roundedRect(x, cardY, cardW, 24, 2, 2, 'F');
 
-        // Gold left accent line
         doc.setFillColor(...goldDim);
         doc.rect(x, cardY, 1.5, 24, 'F');
 
-        // Top border
         doc.setDrawColor(...gold);
         doc.setLineWidth(0.3);
         doc.line(x, cardY, x + cardW, cardY);
 
-        // Label
+      
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(6.5);
         doc.setTextColor(...textMuted);
         doc.text(card.label, x + 5, cardY + 8);
 
-        // Value
+        
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(11);
         doc.setTextColor(...card.color);
         doc.text(card.value, x + 5, cardY + 18);
     });
 
-    // Transaction count card (4th)
     const countX = cardStartX + 3 * (cardW + cardGap);
     doc.setFillColor(...bgCard);
     doc.roundedRect(countX, cardY, cardW, 24, 2, 2, 'F');
@@ -330,7 +325,7 @@ function exportPDF() {
     doc.setTextColor(...gold);
     doc.text(`${transactions.length}`, countX + 5, cardY + 18);
 
-    // ── SECTION DIVIDER ──
+
     const tableTop = cardY + 34;
 
     doc.setFillColor(...bgCard);
@@ -345,7 +340,7 @@ function exportPDF() {
     doc.setLineWidth(0.3);
     doc.line(0, tableTop + 6, W, tableTop + 6);
 
-    // ── TRANSACTIONS TABLE ──
+    
     const rows = transactions.map(t => {
         const d = new Date(t.date);
         const dateFormatted = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
@@ -397,64 +392,80 @@ function exportPDF() {
             5: { cellWidth: 22 },
         },
         didParseCell(data) {
-            // Colour the Amount column
+            
             if (data.column.index === 4 && data.section === 'body') {
                 const val = data.cell.raw;
                 data.cell.styles.textColor = val.startsWith('+') ? greenCol : redCol;
             }
-            // Colour the Type column
+        
             if (data.column.index === 3 && data.section === 'body') {
                 data.cell.styles.textColor = data.cell.raw === 'Income' ? greenCol : [239, 100, 100];
             }
-            // Status pill colour
+            
             if (data.column.index === 5 && data.section === 'body') {
                 data.cell.styles.textColor = greenCol;
             }
         },
         didDrawRow(data) {
             if (data.section !== 'body') return;
-            // Left gold accent on every row
+            
             doc.setFillColor(...goldDim);
             doc.rect(data.row.cells[0].x, data.row.cells[0].y, 0.8, data.row.height, 'F');
         },
         margin: { left: 14, right: 14 },
     });
 
-    // ── FOOTER ──
     const pageCount = doc.internal.getNumberOfPages();
     for (let p = 1; p <= pageCount; p++) {
         doc.setPage(p);
         const pageH = doc.internal.pageSize.height;
 
-        // Footer bg
+        
         doc.setFillColor(...bgCard);
         doc.rect(0, pageH - 14, W, 14, 'F');
         doc.setDrawColor(...goldDim);
         doc.setLineWidth(0.3);
         doc.line(0, pageH - 14, W, pageH - 14);
 
-        // Left: branding
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(7);
         doc.setTextColor(...goldDim);
         doc.text('VAULT — Financial Dashboard', 14, pageH - 5);
 
-        // Center: confidential
+        
         doc.setFont('helvetica', 'normal');
         doc.setTextColor(...textMuted);
         doc.setFontSize(6.5);
         doc.text('CONFIDENTIAL DOCUMENT', W / 2, pageH - 5, { align: 'center' });
 
-        // Right: page number
+        
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(7);
         doc.setTextColor(...goldDim);
         doc.text(`Page ${p} of ${pageCount}`, W - 14, pageH - 5, { align: 'right' });
     }
 
-    // ── SAVE ──
+    
     const fileName = `vault-report-${now.toISOString().slice(0, 10)}.pdf`;
     doc.save(fileName);
 
     showNotification('PDF exported successfully', 'success');
 }
+const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function showToday() {
+    const now = new Date();
+    document.getElementById("dateText").textContent =
+      now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();
+  }
+
+  showToday();
+
+  let lastDay = new Date().getDate();
+  setInterval(() => {
+    const today = new Date().getDate();
+    if (today !== lastDay) {
+      lastDay = today;
+      showToday();
+    }
+  }, 60000);
