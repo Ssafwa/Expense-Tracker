@@ -2,8 +2,8 @@
 
 A simple website to track your expenses and understand where your money is going.
 
-![screenshot of expes tracker ] (<img width="1913" height="927" alt="image" src="https://github.com/user-attachments/assets/eb025fc9-9528-4b19-9c1b-4417a567eb89" />
-)
+![screenshot of expes tracker ] <img width="1913" height="942" alt="image" src="https://github.com/user-attachments/assets/26edac6f-ff5b-4293-b5e4-db815571a9e5" />
+
 
 -----------
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://expense-tracker-pink-xi-60.vercel.app/)
