@@ -23,14 +23,14 @@ decided to build my own instead of using an app.
 
 
 
-  ### How it's built
+  ### HOW ITS BUILD 
   ------------------
 Pure HTML/CSS/JS — no framework. 
 PDF export uses jsPDF + jsPDF-AutoTable — . Icons are Font Awesome.
 
 
 
-#### Running it locally
+#### RUNNING IT LOCALLY
 ---------------------
 \`\`\`
 git clone https://github.com/Ssafwa/Expense-Tracker.git
@@ -39,7 +39,7 @@ Open `index.html` in your browser — no build step needed.
 
 
 
-##### Tech stack
+##### TECH STACK
 ----------------
 - HTML, CSS, JavaScript
 - Font Awesome (icons)
