@@ -44,3 +44,11 @@ Open `index.html` in your browser — no build step needed.
 - HTML, CSS, JavaScript
 - Font Awesome (icons)
 - jsPDF + jsPDF-AutoTable (PDF export)
+
+
+###### AI USAGE IN THIS WEBSITE 
+-------------------------------
+-I AM USED THE AI FOR  THIS WEBSITE MAINLY FOR ERROR FINDING,BASIC ISSUE WITH THE VS CODE (i am still studying the vs code so i am just need some help from ai), AND SOME SUGGESTIONS ABOUT MY WEBSITE 
+thats it :))
+
+
