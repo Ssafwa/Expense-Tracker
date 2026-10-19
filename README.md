@@ -1,5 +1,5 @@
 # EXPENSE TRACKER
-i made this  website for people to track or manage their expense after  
+i made this  website for people to track or manage their expense 
 <p align="center">
 <img width="1918" height="945" alt="image" src="https://github.com/user-attachments/assets/332b270e-3e15-4d40-8955-38ef860f086a" />
 </p>
