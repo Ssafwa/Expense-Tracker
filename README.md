@@ -66,3 +66,5 @@ Made by safwan, https://github.com/Ssafwa
 > A NOTE FOR HACKCLUB SHIPWRIGHTS
 > This readme is fully writen by me 
 > <img width="929" height="877" alt="image" src="https://github.com/user-attachments/assets/b8d20aa6-ac56-47b4-b49a-505009c83b65" />
+<img width="846" height="402" alt="image" src="https://github.com/user-attachments/assets/a8646b61-b107-4217-9e21-c3016a7cc673" />
+
