@@ -34,7 +34,8 @@ i made this  website for people to track or manage their expense
   <img width="1918" height="945" alt="image" src="https://github.com/user-attachments/assets/a4c1aaf6-4c29-4744-a6f0-bb395f0262bd" />
 
 <img width="1504" height="715" alt="image" src="https://github.com/user-attachments/assets/12b4354b-c3f6-4248-8c3f-010fa2f541c4" />
-### PDF Generated
+
+ ### PDF Generated
 <img width="949" height="947" alt="image" src="https://github.com/user-attachments/assets/602c37b4-c60f-49c4-8168-e88b168a9172" />
  
 ## Tech Stack
