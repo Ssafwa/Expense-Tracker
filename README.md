@@ -44,6 +44,18 @@ i made this  website for people to track or manage their expense
  - Database - NO USING OF DATABASE (stores in localstorage)
  - Hosting - Vercel
 
+## Project Structure
+
+Expense-tracker/    
+├── .gitignore                 
+├── CODE_OF_CONDUCT.md          
+├── LICENSE                     
+├── SECURITY.md                
+├── index.html                
+├── style.css                   
+├── script.js                  
+└── README.md                   
+
 ## Getting Started
 
 
